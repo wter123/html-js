@@ -1,0 +1,372 @@
+	.v-header {
+		color: rgb(255, 255, 255);
+		position: relative;
+		width: 100%;
+		height: auto;
+		background: url(brand@2x.png) repeat fixed center;
+		background: url(./seller_avatar_256px.jpg)  ;
+		background: rgba(7, 17, 27, 0.5);
+
+		.content-wrapper {
+			// width:100%;
+
+			height: auto;
+			position: relative;
+
+			padding: 48px 24px 36px 48px;
+
+			.avatar {
+				// float: left;
+				width: 128px;
+				height: 128px;
+				
+				display: inline-block;
+
+				img {
+					// display: inline;
+					border-radius: 14px;
+					width: 128px;
+					height: 128px;
+
+				}
+
+				// m
+			}
+
+			.content {
+				padding-right: 100px  ;
+				position: absolute;
+				margin-left: 32px;
+				display: inline-block;
+				// float: right;
+
+
+				padding-top: 4px;
+
+				.title {
+					position: relative;
+					margin: 0px 0px 16px 0px;
+
+
+					.brand1 {
+
+						display: inline-block;
+						width: 60px;
+						height: 36px;
+
+						background: white;
+					}
+
+					.name {
+						
+						margin-left: 12px;
+						font-size: 2.6rem;
+						color: rgb(255, 255, 255);
+						font-weight: bold;
+						line-height: 3rem;
+					}
+				}
+
+				.description {
+					// 
+					margin-buttom: 20px;
+					font-size: 2rem;
+					color: rgb(255, 255, 255);
+					font-weight: 200;
+					line-height: 24px;
+				}
+
+				.support {
+					margin: 20px 0 0 0;
+
+
+					.icon {
+						display: inline-block;
+
+						img {
+							margin-top: 5px;
+						}
+					}
+
+					.text {
+						font-size: 1.667rem;
+						color: rgb(255, 255, 255);
+						font-weight: 200;
+						line-height: 24px;
+					}
+
+				}
+
+			}
+
+			.count-wrapper {
+				position: absolute;
+				right: 18px;
+				bottom: 36px;
+
+				.count {
+					float: right;
+					padding: 14px 16px;
+					font-size: 1.67rem;
+					color: rgb(255, 255, 255);
+					font-weight: 200;
+					line-height: 24px;
+					border-radius: 15px;
+					background: red;
+				}
+			}
+		}
+
+		.bulltin-wrapper {
+			font-size: 1.67rem;
+			height: 56px;
+			// width: 100%;
+			position: relative;
+			color: rgb(255, 255, 255);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			background: rgba(7, 17, 27, 0.2);
+			padding: 0 38px 0 24px;
+
+			.bulltin-title {
+
+				color: rgb(0, 0, 0);
+				background: #FFFFFF;
+				font-size: 2rem;
+			}
+
+			.bulltin-text {
+				margin-left: 8px;
+
+				// width: 100%;
+
+				font-size: 1.67rem;
+				color: rgb(255, 255, 255);
+				font-weight: 200;
+				line-height: 56px;
+
+
+			}
+
+			.bulltin-right-arrow {
+				position: absolute;
+				right: 24px;
+				bottom: 12px;
+				margin-left: 8px;
+				// margin-right: 24px;
+				font-size: 2rem;
+
+				// font-size: 1.67rem;
+			}
+		}
+
+		// 		>img {
+		// 			width: 60px;
+		// 			height: 60px;
+		// }	text-align: center;	
+		// text-align: center;
+		.detail-bar {
+			position: fixed;
+
+			background: #000000;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			overflow: auto;
+			top: 0;
+			left: 0;
+
+			.detail {
+				color:rgba(7,17,27,0.8);
+				blur:10px;
+				 
+				min-height: 100%;
+				width: 100%;
+
+				.content-main {
+					.header {
+
+						margin-top: 128px;
+						text-align: center;
+
+						.detail-name {
+							margin-bottom: 32px;
+							font-size: 2.667rem;
+							font-weight: 700;
+							color: rgb(255, 255, 255);
+							line-height: 32px;
+						}
+
+						.star {
+							margin:32px auto 56px auto;
+						}
+
+
+					}
+
+					.detail-content {
+						.detail-title {									
+							color: rgb(255, 255, 255);
+							text-align: center; 
+							// width: 80%;
+							margin: 0px 72px;
+						font-size: 2.3rem;
+						font-weight: 700;
+						line-height: 2.3rem;
+
+							margin-bottom: 48px;
+							display: flex; 
+							.line {
+								position: relative;
+								top: -8.5px;
+								flex: 1;
+								border-bottom: 5px solid rgba(255,255,255,0.2);
+
+							}
+							.text{
+								// flex: 1;
+								padding: 0 12px;
+							}
+						}
+
+						.youhui {
+							div {
+								margin: 12px 24px 48px 96px; 
+								&div:last-child {
+									margin-bottom: 0px;
+								}
+
+								li {
+								
+									margin-left: 12px;
+									display: inline-block;
+
+									background-repeat: no-repeat;
+									list-style: none;
+									font-size: 2rem;
+									color: rgb(255, 255, 255);
+									font-weight: 200;
+									line-height: 24px;
+
+									&.padding {
+										position: relative;
+										bottom: 8px;
+									}
+
+									&.star0 {
+										width: 36px;
+										height: 36px;
+										background-image: url(decrease_3@3x.png);
+									}
+
+									&.star1 {
+										width: 36px;
+										height: 36px;
+										background-image: url(discount_3@3x.png);
+									}
+
+									&.star2 {
+										width: 36px;
+										height: 36px;
+										background-image: url(discount_3@3x.png);
+									}
+
+									&.star3 {
+										width: 36px;
+										height: 36px;
+										background-image: url(special_3@3x.png);
+									}
+
+									&.star4 {
+										width: 36px;
+										height: 36px;
+										background-image: url(special_3@3x.png);
+									}
+
+									&.star5 {
+										width: 36px;
+										height: 36px;
+										background-image: url(special_3@3x.png);
+									}
+
+								 
+
+								}
+							}
+						}
+
+
+
+					}
+
+					margin-top: 64px;
+
+					padding-bottom: 64px;
+				}
+
+				.notice {
+					color:rgb(255,255,255) ;
+					margin:0 auto;
+					
+					
+					
+width: 80%;
+					.notice-title {
+						text-align: center;
+						
+						 	color: rgb(255, 255, 255);
+							text-align: center; 
+							// width: 80%;
+							 
+						 
+						 font-size: 2.3rem;
+						font-weight: 700;
+						line-height: 2.3rem;
+						 
+
+							margin-bottom: 48px;
+							display: flex; 
+							.notice-line {
+								position: relative;
+								top: -8.5px;
+								flex: 1;
+								border-bottom: 5px solid rgba(255,255,255,0.2);
+
+							}
+							.notice-text{
+								// flex: 1;
+								padding: 0 12px;
+							}
+					}
+
+					.notice-content {
+						
+						font-size: 2rem;
+						text-indent: 2em;
+						font-weight: 200;
+						line-height: 4rem;
+					}
+					
+
+				}
+
+
+
+
+			}
+
+			.detail-close {
+				color: rgb(255,255,255);
+				width: 64px;
+				height: 64px;
+				margin-top: -64px;
+				margin-left: auto;
+				margin-bottom: 0;
+				margin-right: auto;
+				position: relative;
+				font-size:4rem;
+				clear: both;
+			}
+		}
+	}

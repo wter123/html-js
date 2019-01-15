@@ -3,7 +3,7 @@
     "name": "粥品香坊（回龙观）",
     "description": "蜂鸟专送",
     "deliveryTime": 38,
-    "score": 4.2,
+    "score": 4.7,
     "serviceScore": 4.1,
     "foodScore": 4.3,
     "rankRate": 69.2,
@@ -56,7 +56,7 @@
         {
           "name": "皮蛋瘦肉粥",
           "price": 10,
-          "oldPrice": "",
+          "oldPrice": "24",
           "description": "咸粥",
           "sellCount": 229,
           "rating": 100,

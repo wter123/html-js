@@ -9,24 +9,32 @@
 </template>
 <style scoped="scoped" lang="less">
 	.v-nav{
+		
 		.v-flex{
 			display: flex;
 			flex-direction: row;
 			line-height: 40px;
-			.v-items{
+			.v-items{height: 80px;
+			line-height: 80px;
 				flex: 1;
 				text-align: center;
-			}
-			a{
+			
+			a{font-size: 2.167rem;
 				text-decoration: none;
+				&:hover {
+				// display: none;
+				// font-size: 1rem;
+				// background: #42B983;
+				text-decoration: underline;
+				color: yellow;
 			}
-			&>a{
-				display: none;
-font-size: 12px;				background: #000000;
+			}
+			&:hover{background: red;
+				
+			}
+			
 			}
 		}
 	}
-	.v-items:hover{
-		background: red;
-	}
+	
 </style>

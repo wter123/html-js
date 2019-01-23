@@ -118,7 +118,10 @@
 				
 			}
 		}
-		.shopcart-list{z-index: 20;
+		.shopcart-list{
+			 	-ms-overflow-style: none; //IE 10+
+			 	overflow: -moz-scrollbars-none; //Firefox
+			 
 
 			position: absolute;
 			left: 0;
@@ -126,7 +129,7 @@
 			width: 100%;
 			max-height: 611px;
 			background: #FFF;
-			overflow: hidden;
+			overflow: visible;
 			.list-header{border-bottom: 1px solid rgba(7,17,27,0.1);
 				background: #F3F5F7;
 				height: 80px;
@@ -150,6 +153,8 @@
 				
 			}
 			.list-container{
+				 
+ 
 				
 				ul{
 					li{

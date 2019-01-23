@@ -1,0 +1,198 @@
+	.shopcart {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 50;
+		background: #141d27;
+		height: 88px;
+		width: 100%;
+		.shopcart-content { 
+			height: 88px;
+			display: flex;
+			.shopcart-left {
+				 z-index: 200;
+				font-size: 0;
+				flex: 1;
+				height: 88px; 
+				.shopcart-wrapper {
+					display: inline-block;
+					vertical-align: middle;
+					position: relative;
+					top: -28px;
+					width: 110px;
+					background: #141d27;
+					border-radius: 50%;
+					padding-top: 12px;
+					margin-left: 24px;
+					margin-bottom: 4px;
+					margin-right: 24px;
+					
+	//.shopcart-logo的宽高会影响父级兄弟元素.shopcart-price .shopcart-descrition的高，使其无效
+					.shopcart-logo {
+						padding: ;
+						.shopcart-count-total{
+							position: relative;
+							top: -91.08px;
+							right: -51.09px;
+							font-size: 1.5rem;
+							font-weight: 700;
+							display: inline-block;
+							box-shadow:0px 4px 8px 0px rgba(255, 255, 255, 0.4) ;
+							width: 48px;
+							background: rgba(240,20,20,0.9);
+							box-sizing: border-box;
+							color: rgb(255,255,255);
+							padding: 0 12px;
+							border-radius: 12px;
+							line-height: 32px;
+							
+						}
+						&.HeightLight{
+								background-color: rgb(0,160,200);
+								
+								
+							}
+						.icon-shopping_cart {
+							
+							text-align: center;
+							padding: 17px 0 0 0;
+							font-size: 4rem;
+							color: rgba(255, 255, 255 ,0.4);
+&.HeightLight{
+									color: rgb(255, 255, 255 )
+
+								}
+						}
+						width: 88px;
+						height: 88px;
+						background: #2b343c;
+						border-radius: 50%;
+						margin: auto;
+					}
+				}
+				.shopcart-price {
+					display: inline-block;
+					font-size: 3.667rem;
+					padding: 0 24px 0 0 ;
+					color: rgba(255, 255, 255 ,0.4);
+					
+					&.HeightLight{
+					color: rgb(255, 255, 255 )
+					}
+					font-weight: 700;
+				}
+				.shopcart-descrition {
+					display: inline-block;
+					padding-left: 24px;
+					
+					border-left: 1px solid rgba(255, 255, 255,0.4);
+					
+					font-size: 2.667rem;
+					font-weight: 200;
+					color: rgba(255, 255, 255, 0.4);
+					
+				}
+			}
+			 
+			
+			.shopcart-right {
+				display: table;
+				.shopcart-buy{
+					&.HeightLight{
+						background-color:#00b43c;
+						color: #FFFFFF;
+					}
+					display: table-cell;
+					 background: #2b333b;
+					 height: 88px;
+					flex: 0 0 210px;	
+									width: 210px;
+					font-weight: 700;
+					color: rgba(255, 255, 255, 0.4);
+					font-size: 2.667rem;
+					padding: 0 12px;
+					text-align: center;
+					line-height: 88px;
+					vertical-align: middle;
+			}
+				
+			}
+		}
+		.shopcart-list{z-index: 20;
+
+			position: absolute;
+			left: 0;
+			bottom: 88px;
+			width: 100%;
+			max-height: 611px;
+			background: #FFF;
+			overflow: hidden;
+			.list-header{border-bottom: 1px solid rgba(7,17,27,0.1);
+				background: #F3F5F7;
+				height: 80px;
+				padding: 0 36px;
+				
+				.list-shopcart{
+					float: left;
+				font-size: 2.333rem;
+				font-weight: 200;
+								  
+				line-height: 80px;
+				color: rgb(7,17,27);
+				}
+				.list-clear{
+				float: right;
+
+				font-size: 2rem;
+				font-weight: 200;
+				line-height: 80px;
+				color: rgb(0,160,220);}
+				
+			}
+			.list-container{
+				
+				ul{
+					li{
+						position: relative;
+						height: 96px;
+						box-sizing: border-box;
+						padding: 24px 36px;
+						border-bottom:2px solid rgba(7,18,27,0.1);
+					
+						
+							.list-name{	
+						
+								display: inline-block;
+
+							vertical-align: middle;
+							font-size: 2.333rem;
+							color: rgb(7,17,27);
+							line-height: 48px;
+						}
+				
+						
+					 .newprice-list{						
+						 position: absolute;
+						 right: 218px;
+						 bottom: 35px;
+						 vertical-align: middle;
+						 float: right;
+						 display: inline-block;	
+							 font-size: 1.6667rem;
+							 font-weight: 700;
+							 color: rgb(240,20,20);
+								
+						}
+						.cart-wrapper{				
+						position: absolute;
+						right: 30px;
+						bottom: 18px;
+							display: inline-block;	
+								
+
+						}
+					}
+				}
+			}
+	}
+	}

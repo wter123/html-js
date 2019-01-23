@@ -1,0 +1,24 @@
+
+
+<div class="bar">
+					<div class="particulars-top">
+						{{particulars.name}}
+				</div>
+<template v-for="foods in particulars.foods">
+						<div class="bar">
+							<div  class="photograp" >
+								<img :src="foods.icon" alt="">
+							</div>
+							
+							<div  class="particulars-text" >
+								<div class="particulars-name">
+							</div>
+							<div class="particulars-description">{{foods.description}}</div>
+							<div class="particulars-sell">月售{{foods.sellCount}}份</div>
+							<div class="particulars-comment">好评率{{foods.rating}}</div>
+							<div class="particulars-price">{{foods.price}}</div><!-- <img src="" :src="foods.image"alt=""> --></div>
+						</div>
+						
+						<!-- :src="" -->
+						<br>
+					</template></div>

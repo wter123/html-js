@@ -2,7 +2,7 @@
 	<div class="cartcontral">
 		
 		<transition name="move"  >
-			<div class="cartcontral-decrease" @click="cartcontralDecrease" v-show="food.count>0">
+			<div class="cartcontral-decrease" @click.stop="cartcontralDecrease" v-show="food.count>0">
 				<div class="inner icon-remove_circle_outline"></div>
 			</div>
 		</transition>
@@ -11,7 +11,7 @@
 		<div class="cartcontral-description" v-show="food.count>0">
 			<div class="description-text">{{food.count}}</div>
 		</div>
-		<div class="cartcontral-add" v-on:click="cartcontralCount()">
+		<div class="cartcontral-add" v-on:click.stop="cartcontralCount()">
 			<div class="icon-add_circle"></div>
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 				}
 			},
 			cartcontralDecrease() {
-				console.log(this.food.count)
+				this.$emit("cartcontralCount",this.food.count)
 				if (!this.food.count) {
 					this.food.count = 0
 				}

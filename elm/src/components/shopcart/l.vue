@@ -1,7 +1,7 @@
 <template>
 	<div class="shopcart">
 		<div class="shopcart-content">
-			<div class="shopcart-left" @click="listContainerShow()">
+			<div class="shopcart-left" @click.stop="listContainerShow()">
 				<div class="shopcart-wrapper">
 					<div class="shopcart-logo" :class="{'HeightLight': totalCount>0}">
 						<div class="icon-shopping_cart" :class="{'HeightLight': totalCount>0}"></div>
@@ -10,12 +10,12 @@
 				</div>
 				<div class="shopcart-price" :class="{'HeightLight':totalPrice}">¥ {{totalPrice}}</div>
 				<div class="shopcart-descrition">另需配送费¥{{deliveryPrice}}元</div>
-			</div>
+			</div>//
 			<div class="shopcart-right" @click="listShow">
 				<div class="shopcart-buy" :class="{'HeightLight': totalPrice>=20 }">{{totalDescription}}</div>
 			</div>
 
-			<div>
+			<!-- <div> -->
 				<div class="shopcart-list" v-show="listContainerQuiet">
 					<div class="list-header">
 						<span class="list-shopcart">购物车</span>
@@ -40,7 +40,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 
 
 		</div>
@@ -70,12 +70,12 @@
 					food.count = 0
 				})
 			},
-			_initScrolll() {
-				this.listScroll = new BScroll(this.$refs.shopcartList, {
-					click: true
-				})
-			},
-
+// 			_initScrolll() {
+// 				this.listScroll = new BScroll(this.$refs.shopcartList, {
+// 					click: true
+// 				})
+// 			},
+// 
 			listContainerShow() {
 				if (!this.totalCount) {
 
@@ -84,23 +84,23 @@
 				}
 
 				this.listContainerQuiet = !this.listContainerQuiet
-				console.log("‘”", this.listContainerQuiet)
+				
 			}
 		},
 
 		data() {
 			return {
-				listContainerQuiet: true
+				listContainerQuiet: false
 			}
 		},
 		computed: {
 			listShow() {
 				if (!this.totalCount) {
-					console.log(0)
-					this.listContainerQuiet = true
+					
+					// this.listContainerQuiet = true
 					return false
 				}
-				console.log("this.listContainerQuiet", this.listContainerQuiet)
+				
 				let show =
 
 
@@ -108,25 +108,25 @@
 
 
 
-					this.listContainerQuiet
+					!this.listContainerQuiet
 				// 				if(show){
-				console.log(1)
-												this.$nextTick(function() {
-				// 							if(!this.listScroll){
-				// 								// this.listScroll = new BScroll(this.$refs.shopcartList, {click:true}),
-												this.listScroll = new BScroll(this.$refs.shopcartList, {
-													click: true,
-													probeType: 3
-												})
-											// }
-				// 									if(show) {
-				// 										 console.log(show,7)
-				// 									}
-				// 									else{
-				// 								//		this.listScroll.refresh();
-				// 									}
-				//Slll
-												})
+				
+				this.$nextTick(function() {
+					// 							if(!this.listScroll){
+					// 								// this.listScroll = new BScroll(this.$refs.shopcartList, {click:true}),
+					this.listScroll = new BScroll(this.$refs.shopcartList, {
+						click: true,
+						probeType: 3
+					})
+					// }
+					// 									if(show) {
+					// 										 console.log(show,7)
+					// 									}
+					// 									else{
+					// 								//		this.listScroll.refresh();
+					// 									}
+					//Slll
+				})
 				// 							}
 				return show
 			},

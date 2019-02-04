@@ -18,9 +18,9 @@
 
 				<ul>
 					<li v-for="particulars in goodsData.goods" class="particulars-hook">
-						<h1>{{particulars.name}}{{index}}</h1>
+						<h1>{{particulars.name}}</h1>
 						<ul>
-							<li v-for="food in particulars.foods">
+							<li v-for="food in particulars.foods" @click="selectFood(food,$event)">
 								<div class="particulars-image"><img :src="food.icon" alt=""></div>
 								<div class="particulars-text">
 									<div class="particulars-name">{{food.name }}</div>
@@ -49,7 +49,7 @@
 		<shopcart :deliveryPrice="goodsData.seller.deliveryPrice" :minPrice="goodsData.seller.minPrice" :select-foods="foodTotal">
 			
 		</shopcart>
-
+ <food :food='selectedFood' ref="food"/> <!--Showvv-ref:food-->
 	</div>
 
 </template>
@@ -58,13 +58,16 @@
 	import BScroll from "better-scroll";
 	import shopcart from "../shopcart/l.vue";
 	import cartcontral from "../cartcontral/cartcntralo.vue";
+	import food from '../food/food.vue'
 	export default {
 		components: {
 			shopcart: shopcart,
-			cartcontral
+			cartcontral,
+			food
+			
 		},
 		data() {
-			return {
+			return {selectedFood:{},
 				goodsData: {
 					seller:{
 						deliveryPrice:1
@@ -72,12 +75,13 @@
 					goods:
 						[
 							{foods:[]}
-						]
+						],
+						
 					
 				},
 				"iconSet": ["decrease", "special", '', "discount", "guarantee", "invoice"],
 				positioning: [],
-				ScrollY: 0
+				
 			}
 		},
 		props: {
@@ -109,8 +113,9 @@
 					}
 
 
-
-
+/*
+{{index}}
+*/
 
 
 				}
@@ -140,6 +145,15 @@
 			}
 		}, 
 		methods: {
+			selectFood(food,event){
+				if (!event._constructed) {
+					return 0
+				} 
+				this.selectedFood=food
+				 this.$refs.food.foodShow()//
+			}
+			,
+			
 			menuClick(index, event) {
 				if (!event._constructed) {
 					return 0

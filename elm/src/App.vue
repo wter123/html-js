@@ -57,13 +57,14 @@ export default {
 
 <style lang="less">
 	@import "./assets/icon-font/style.css";
+
 *{
 	padding: 0;
 	margin: 0;
 	}
 	
-	html{
-		font-size: 12px;}
+// 	html{
+// 		font-size: 12px;}
 	body {font-family: "Microsoft YaHei";color: #333;width: 100%;max-width: 1200px;min-width: 320px;margin:0 auto;}
 
 

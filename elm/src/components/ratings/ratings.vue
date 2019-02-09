@@ -39,7 +39,7 @@
 					<li v-for="ratings in ratingsSelect()">
 					<div class="avatar"><img :src="ratings.avatar" alt=""></div>
 					<div class="content"><div class="top"><span class="name">{{ratings.username}}</span>
-						<span class="time">{{ratings.rateTime}}</span></div>
+						<span class="time">{{ratings.rateTime | formatDate}}</span></div>
 						<div class="top-two"><span class="star"><star :size="36" :score='ratings.score'></star></span><span v-show="ratings.deliveryTime" class="time-description">{{ratings.deliveryTime}}分钟送达</span></div>
 	
 						<div class="content-text">{{ratings.text}}</div>
@@ -79,7 +79,16 @@ import BScroll from 'better-scroll'
 			star,
 			
 		},
-
+	
+// 	computed:{
+// 		}	,
+	
+		  filters: {
+    formatDate (time) {
+      let date = new Date(time)
+      return formatDate(date, 'yyyy-MM-dd hh:mm')
+    }
+	},	
 		methods: {
 
 

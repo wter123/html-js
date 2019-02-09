@@ -36,8 +36,8 @@
 							<ul v-for="rating in ratingsshow()">
 								<li>
 									<div class="rating-top">
-										<div class="ratings-time">{{rating.rateTime}}</div>
-										<div class="ratings-username">{{rating.username}}</div>
+										<div class="ratings-time">{{rating.rateTime | formatDate}}</div>
+	<!-- rating.rateTime -->									<div class="ratings-username">{{rating.username}}</div>
 										<div class="ratings-avatar"> <img :src="rating.avatar" alt=""></div>
 									</div>
 									<div class="ratings-bottom">
@@ -61,9 +61,10 @@
 	import ratingsselect from "../ratingsselect/ratingsselect.vue"
 	import split from "../public/split.vue"
 	import cartcontral from "../cartcontral/cartcntralo.vue"
+	import {formatDate} from '../../common/js/formatDate.js'
 	import vue from 'vue'
 	export default {
-
+	
 		components: {
 			ratingsselect,
 			split,
@@ -81,7 +82,13 @@
 			food: {
 				type: Object,
 			}
-		},
+		},	 
+		 filters: {
+    formatDate (time) {
+      let date = new Date(time)
+      return formatDate(date, 'yyyy-MM-dd hh:mm')
+    }
+	},
 		methods: {
 			cartcontralShowF() {
 				if (!this.food.count) {

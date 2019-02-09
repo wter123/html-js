@@ -17,30 +17,21 @@
 </script>
 <style scoped="scoped" lang="less">
 	.v-nav{
-		
+		border-bottom: 1px solid rgba(7, 17, 27, 0.1);
 		.v-flex{
 			display: flex;
 			flex-direction: row;
+			line-height: 20px;
+			.v-items{
 			line-height: 40px;
-			.v-items{height: 80px;
-			line-height: 80px;
 				flex: 1;
 				text-align: center;
-			
-			a{font-size: 2.167rem;
+			a{font-size: 14px;
 				text-decoration: none;
-				&:hover {
-				// display: none;
-				// font-size: 1rem;
-				// background: #42B983;
-				text-decoration: underline;
-				color: yellow;
+				&:hover ,&:active  {
+				color: rgb(240,20,20);
 			}
 			}
-			&:hover{background: red;
-				
-			}
-			
 			}
 		}
 	}

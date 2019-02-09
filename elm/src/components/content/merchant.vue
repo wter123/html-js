@@ -1,8 +1,6 @@
 <template>
-	<div class="merchant">merchant</div>
+	<div class="merchant"><seller/></div>
 </template>
-
-
 <script>
 	import seller from '../seller/seller.vue' 
 export default {

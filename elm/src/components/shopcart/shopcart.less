@@ -4,76 +4,90 @@
 		left: 0;
 		z-index: 50;
 		background: #141d27;
-		height: 88px;
+		height: 44px;
 		width: 100%;
 		.shopcart-content { 
-			height: 88px;
+			height: 44px;
 			display: flex;
 			.shopcart-left {
 				 z-index: 200;
 				font-size: 0;
 				flex: 1;
-				height: 88px; 
+				height: 44px; 
 				.shopcart-wrapper {
 					display: inline-block;
-					vertical-align: middle;
+					vertical-align: middle;height:44px ;
 					position: relative;
-					top: -28px;
-					width: 110px;
+					top: -14px;
+					width: 56px;
 					background: #141d27;
 					border-radius: 50%;
-					padding-top: 12px;
-					margin-left: 24px;
+					padding-top: 6px;
+					margin-left: 12px;
 					margin-bottom: 4px;
-					margin-right: 24px;
-					
-	//.shopcart-logo的宽高会影响父级兄弟元素.shopcart-price .shopcart-descrition的高，使其无效
-					.shopcart-logo {
-						padding: ;
-						.shopcart-count-total{
-							position: relative;
-							top: -91.08px;
-							right: -51.09px;
-							font-size: 1.5rem;
+					margin-right: 12px;
+					.shopcart-count-total{
+							position: fixed;
+							bottom: 44px;
+							left:  44px;
+							font-size: 9px;
 							font-weight: 700;
 							display: inline-block;
 							box-shadow:0px 4px 8px 0px rgba(255, 255, 255, 0.4) ;
-							width: 48px;
+							width: 24px;
 							background: rgba(240,20,20,0.9);
 							box-sizing: border-box;
 							color: rgb(255,255,255);
-							padding: 0 12px;
-							border-radius: 12px;
-							line-height: 32px;
+							// padding: 0 0 0 0;
+							text-align: center;
+							border-radius: 6px;
+							line-height: 16px;
 							
 						}
+	//					vertical-align: middle;.shopcart-logo的宽高会影响父级兄弟元素.shopcart-price .shopcart-descrition的高，使其无效12
+					.shopcart-logo {
+						// position: absolute;
+						// left: 6px;
+						display: table;
+						width: 100%;
+						height:44px ;
+					position: relative;
+
+						padding: ;
+						
 						&.HeightLight{
 								background-color: rgb(0,160,200);
 								
-								
 							}
-						.icon-shopping_cart {
-							
+						.icon-shopping_cart {				
+							display: table-cell;
+							vertical-align: middle;
+							// position: absolute;
+							// padding: 8px;10px10px0
+							// line-height: 44px;
+// 							top:  25%;
+// 							left: 25%;
 							text-align: center;
-							padding: 17px 0 0 0;
-							font-size: 4rem;
+							
+							font-size: 24px;
 							color: rgba(255, 255, 255 ,0.4);
 &.HeightLight{
 									color: rgb(255, 255, 255 )
 
 								}
 						}
-						width: 88px;
-						height: 88px;
+						width: 44px;
+						height: 44px;
 						background: #2b343c;
 						border-radius: 50%;
 						margin: auto;
 					}
 				}
+				
 				.shopcart-price {
 					display: inline-block;
-					font-size: 3.667rem;
-					padding: 0 24px 0 0 ;
+					font-size: 14px;
+					padding: 0 12px 0 0 ;
 					color: rgba(255, 255, 255 ,0.4);
 					
 					&.HeightLight{
@@ -83,11 +97,11 @@
 				}
 				.shopcart-descrition {
 					display: inline-block;
-					padding-left: 24px;
+					padding-left: 12px;
 					
 					border-left: 1px solid rgba(255, 255, 255,0.4);
 					
-					font-size: 2.667rem;
+					font-size: 12px;
 					font-weight: 200;
 					color: rgba(255, 255, 255, 0.4);
 					
@@ -104,100 +118,110 @@
 					}
 					display: table-cell;
 					 background: #2b333b;
-					 height: 88px;
-					flex: 0 0 210px;	
-									width: 210px;
+					 height: 44px;
+					flex: 0 0 105px;	
+									width: 105px;
 					font-weight: 700;
 					color: rgba(255, 255, 255, 0.4);
-					font-size: 2.667rem;
-					padding: 0 12px;
+					font-size: 12px ;
+					padding: 0 6px;
 					text-align: center;
-					line-height: 88px;
+					 
 					vertical-align: middle;
 			}
 				
 			}
 		}
 		.shopcart-list{
-//			 	-ms-overflow-style: none; //IE 10+
-//			 	overflow: -moz-scrollbars-none; //Firefox
-			 
+			z-index: -5;
 
 			position: absolute;
 			left: 0;
-			bottom: 88px;
+			bottom: 44px;
 			width: 100%;
-			max-height: 611px;
+			max-height: 306px;
 			background: #FFF;
-			// overflow: visible;
+			overflow: hidden;
 			.list-header{border-bottom: 1px solid rgba(7,17,27,0.1);
 				background: #F3F5F7;
-				height: 80px;
-				padding: 0 36px;
+				height: 40px;
+				padding: 0 18px;
 				
 				.list-shopcart{
 					float: left;
-				font-size: 2.333rem;
+				font-size: 14px;
 				font-weight: 200;
 								  
-				line-height: 80px;
+				line-height: 40px;
 				color: rgb(7,17,27);
 				}
 				.list-clear{
 				float: right;
 
-				font-size: 2rem;
+				font-size: 12px;
 				font-weight: 200;
-				line-height: 80px;
+				line-height: 40px;
 				color: rgb(0,160,220);}
 				
 			}
-			.list-container{
-				 
- 
-				
-				ul{
-					li{
-						position: relative;
-						height: 96px;
-						box-sizing: border-box;
-						padding: 24px 36px;
-						border-bottom:2px solid rgba(7,18,27,0.1);
+.list-wrapper{
+
+ 	position: relative;
+ 	left: 0;
+	top: 0;
+ 	bottom: 44px;
+ 	width: 100%;
+ 	max-height: 306px;
+
+	overflow: hidden;
+	 
+				.list-container{
+					 
+	 
 					
+					ul{
+						li{
+							position: relative;
+							height: 48px;
+							box-sizing: border-box;
+							padding: 12px  18px;
+							border-bottom:1px solid rgba(7,18,27,0.1);
 						
-							.list-name{	
-						
-								display: inline-block;
-
-							vertical-align: middle;
-							font-size: 2.333rem;
-							color: rgb(7,17,27);
-							line-height: 48px;
-						}
-				
-						
-					 .newprice-list{						
-						 position: absolute;
-						 right: 218px;
-						 bottom: 35px;
-						 vertical-align: middle;
-						 float: right;
-						 display: inline-block;	
-							 font-size: 1.6667rem;
-							 font-weight: 700;
-							 color: rgb(240,20,20);
-								
-						}
-						.cart-wrapper{				
-						position: absolute;
-						right: 30px;
-						bottom: 18px;
-							display: inline-block;	
-								
-
+							
+								.list-name{	
+							
+									display: inline-block;
+	
+								vertical-align: middle;
+								font-size: 14px;
+								color: rgb(7,17,27);
+								line-height: 14px;
+							}
+					
+							
+						 .newprice-list{						
+							 position: absolute;
+							 right: 107px;
+							 bottom: 14px;
+							 vertical-align: middle;
+							 float: right;
+							 display: inline-block;	
+								 font-size: 12px;
+								 font-weight: 700;
+								 color: rgb(240,20,20);
+									
+							}
+							.cart-wrapper{				
+							position: absolute;
+							right: 15px;
+							bottom: 3px;
+								display: inline-block;	
+									
+	
+							}
 						}
 					}
 				}
-			}
+}
 	}
 	}

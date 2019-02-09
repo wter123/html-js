@@ -1,201 +1,192 @@
 .goods {
-	
-		position: absolute;
-		bottom: 64px;
-		top: 351px;
 
-		display: flex;
+		position: absolute;
+		bottom: 32px;
+		top: 179.5px;
 		overflow: hidden;
+		display: flex;
 
 		.wrapper-menu {
-			flex: 0 0 160px;
-			width: 160px;
+			flex: 0 0 80px;
+			width: 80px;
 			background: #f3f5f7;
-		 
-			
-
 			.24px();
 
 			ul {
 				height: auto;
 
-				.menu-items {line-height: 43px;
-					span{
-						
-					}
+				.menu-items {
 					color: rgb(24, 20, 20);
 					font-weight: 200;
 
 					&.current {
 						background: #fff;
 						font-weight: 700;
-						font-size: 2rem;
+						font-size: 12px;
 						color: rgb(77, 85, 93);
-
 					}
 
-					height: 108px;
+					height: 54px;
 					display: table;
-					// padding:0 12px;
-					padding: 0 24px;
+					padding: 0 12px;
 
 					.menu-text {
-						width: 160px;
+						width: 80px;
 						display: table-cell;
 						vertical-align: middle;
 
 						.menu-icon {
-
 							display: inline-block;
-
-							width: 24px;
-							height: 24px;
+							width: 12px;
+							height: 12px;
 
 							&.decrease {
-								width: 24px;
-								height: 24px;
-
-								background: url(./discount_3@2x.png);
+								width: 12px;
+								height: 12px;
+								background: url(./discount_3@2x.png) center;
+								background-size: contain;
 							}
 
 							&.discount {
-								width: 24px;
-								height: 24px;
-								background: url(discount_3@2x.png);
+								background-size: cover;
+								width: 12px;
+								height: 12px;
+								background: url(discount_3@2x.png) center;
+								background-size: contain;
 							}
 
 							&.guarangee {
-								background-size: 24px;
-								background: url("./guarantee_3@2x.png");
-
+								background-size: cover;
+								background-size: 12px;
+								background: url("./guarantee_3@2x.png") center;
+								background-size: contain;
 							}
 
 							&.invoice {
-								background-size: 24px;
-								background: url(./invoice_3@2x.png);
-
+								background-size: cover;
+								background-size: 12px;
+								background: url(./invoice_3@2x.png) center;
+								background-size: contain;
 							}
 
 							&.special {
-								background-size: 24px;
-								background: url(./special_3@2x.png);
-
+								background-size: 12px 12px;
+								background: url(./special_3@2x.png) center;
+								background-size: contain;
 							}
-
-
-
-
 						}
 					}
 
 					.goods-line()
 				}
-
-
-
 			}
-
-
 		}
 
 		width:100%;
 
 		.wrapper-particulars {
-
+			width: 100%;
 			flex: 1;
 
 			.particulars-content {
-				ul {
-					li {
+				width: 100%;
 
+				ul {
+					width: 100%;
+
+					li {
+						width: 100%;
 						list-style: none;
 
 						h1 {
-							padding-left: 2rem;
-							width: 100%;
-							font-size: 2rem;
+							padding-left: 12px;
+							font-size: 12px;
 							color: rgb(147, 153, 159);
 							line-height: 52px;
 							background: #f3f5f7;
 						}
 
 						ul {
+							width: 100%;
 
 							li {
-								padding: 36px;
+								width: 90%;
+								padding: 18px;
 								position: relative;
 								list-style: none;
 								.goods-line();
 
 								.particulars-image {
+									flex: 0 0 57px;
+									width: ;
+									height: 57px;
+
+									img {
+										width: 57px;
+										height: 57px;
+									}
+
 									vertical-align: top;
 									display: inline-block;
 								}
 
-
 								.particulars-text {
-									padding: 4px 0 0 20px;
-									flex: 1;
+									max-width:
+										70%;
+									padding: 4px 0 0 10px;
 									display: inline-block;
 
 									.particulars-name {
-										font-size: 28px;
+										font-size: 14px;
 										color: rgb(7, 17, 27);
-										line-height: 28px;
+										line-height: 14px;
 									}
 
 									.particulars-description {
-										margin: 16px 0 16px 0;
+										overflow: hidden;
+										margin: 8px 0 0 0;
 										.goods-sell()
 									}
 
 									.sell-comment {
 										font-size: 0;
+										margin: 8px 0 0 0;
 
 										span:first-child {}
 
 										span:last-child {
-
-											margin-left: 24px;
+											margin-left: 12px;
 										}
 
 										.goods-sell();
-
 									}
 
 									.particulars-price {
 										.newPrice {
-											font-size: 2.3rem;
+											font-size: 14px;
 											color: rgb(244, 20, 20);
 											font-weight: 700;
-											line-height: 48px;
+											line-height: 24px;
 										}
 
 										.oldPrice {
-											margin-left: 16px;
-											font-size: 1.67rem;
+											margin-left: 8px;
+											font-size: 10px;
 											color: rgb(147, 153, 159);
 											font-weight: 700;
 											text-decoration: line-through;
-											line-height: 48px;
+											line-height: 24px;
 										}
-
-
-
-
 									}
 
 									.cartcontral-wrapper {
 										position: absolute;
-										bottom: 36px;
-										right: 36px;
+										bottom: 18px;
+										right: 24px;
 										display: inline-block;
 									}
-
 								}
-
 							}
-
 						}
 					}
 				}
@@ -206,18 +197,15 @@
 
 	.goods-line {
 		border-bottom: 1px solid rgba(7, 17, 27, 0.1);
-
 	}
-
-	
-
 
 	.goods-sell {
-		font-size: 20px;
+		font-size: 10px;
 		color: rgb(147, 153, 159);
-		line-height: 20px;
+		line-height: 14px;
 	}
+
 	.24px {
-		font-size: 2rem;
-		line-height: 28px;
+		font-size: 12px;
+		line-height: 14px;
 	}

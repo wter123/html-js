@@ -86,7 +86,12 @@
 	export default {
 		props: {
 			sellerData: {
-				type: Object
+				type: Object,
+				default() {
+			return {
+				
+				 
+			}
 			}
 		},
 		data() {

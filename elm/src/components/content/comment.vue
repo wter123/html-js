@@ -9,6 +9,5 @@
 		components: {	
 	ratings:ratings
   }
-  // ,
 	}
 </script>

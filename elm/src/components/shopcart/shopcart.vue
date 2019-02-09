@@ -1,108 +1,180 @@
 <template>
-	<div class="shopcsart">
+	<div class="shopcart">
 		<div class="shopcart-content">
-			<div class="shopcart-left">
-				<div class="shopcart-wrapper"><div class="shopcart-logo"><div class="icon-shopping_cart"></div></div></div>
-	<!-- <div class="shopcart-logo"><div class="icon-keyboard_arrow_right"></div></div> -->
+			<div class="shopcart-left" @click.stop="listContainerShow()">
+				<div class="shopcart-wrapper">
+					<div class="shopcart-logo" :class="{'HeightLight': totalCount>0}">
+						<div class="icon-shopping_cart" :class="{'HeightLight': totalCount>0}"></div>
+		<!-- // -->				
+					</div><div class="shopcart-count-total" v-if="totalCount>0">{{totalCount}}</div>
+				</div>
+				<div class="shopcart-price" :class="{'HeightLight':totalPrice}">¥ {{totalPrice}}</div>
+				<div class="shopcart-descrition">另需配送费¥{{deliveryPrice}}元</div>
+			</div>
+			<div class="shopcart-right" @click="listShow">
+				<div class="shopcart-buy" :class="{'HeightLight': totalPrice>=20 }">{{totalDescription}}</div>
+			</div>
 
-			
-			<div class="shopcart-price">0</div>
-			<div class="shopcart-descrition">fffffffff</div>
-		</div>
-		<div class="shopcart-right"></div>
-		</div>
+			<!-- <div> -->
+				<div class="shopcart-list" v-show="listContainerQuiet">
+					<div class="list-header">
+						<span class="list-shopcart">购物车</span>
+						<span class="list-clear" @click="empty">清空</span>
+
+					</div>
+					<div class="list-wrapper" ref="shopcartList">
+						<div class="list-container">
+							<ul v-for="food in selectFoods">
+
+								<li>
+									<div class="list-name">
+										{{food.name}}</div>
+									<div class="newprice-list">
+										¥{{food.price*food.count}}
+									</div>
+									<div class="cart-wrapper">
+										<cartcontral :food="food"></cartcontral>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 		
+		</div>
 	</div>
 </template>
-<style scoped="scoped" lang="less">
+<script>
+	import cartcontral1 from '../cartcontral/cartcntralo.vue'
+	import BScroll from "better-scroll"
+
+	export default {
+		created() {
+			this.$nextTick(function() {
+				// this._initScroll();
+				this.listScroll = new BScroll(this.$refs.shopcartList, {
+					click: true,
+					probeType: 3
+				})
+			})
+		},
+		methods: {
+
+
+
+			empty() {
+
+				this.selectFoods.forEach((food) => {
+					food.count = 0
+				})
+			},
+
+			listContainerShow() {
+				if (!this.totalCount) {
+
+
+					return
+				}
+
+				this.listContainerQuiet = !this.listContainerQuiet
+				
+			}
+		},
+
+		data() {
+			return {
+				listContainerQuiet: false
+			}
+		},
+		computed: {
+			listShow() {
+				if (!this.totalCount) {
+					
+					
+					return false
+				}
+				
+				let show =
+
+
+
+
+
+
+					!this.listContainerQuiet
 	
-	.shopcsart{
-		position: fixed;
-		bottom: 110;
-		left: 0;
-		z-index: 50;
-		background: #141d27;
-		/* height: 100p6; */
-		height: 88px;
-		width: 100%;
-		.shopcart-content{
-			height: 88px;
+				this.$nextTick(function() {
+					// 							if(!this.listScroll){
+					// 								// this.listScroll = new BScroll(this.$refs.shopcartList, {click:true}),
+					this.listScroll = new BScroll(this.$refs.shopcartList, {
+						click: true,
+						probeType: 3
+					})
+					// }
+					// 									if(show) {
+					// 										 console.log(show,7)
+					// 									}
+					// 									else{
+					// 								//		this.listScroll.refresh();
+					// 									}
+					//Slll
+				})
+				// 							}
+				return show
+			},
+			totalCount() {
+				let count = 0;
+				this.selectFoods.forEach((food) => {
+					count = count + parseInt(food.count);
+				})
+				return count
+			},
+			totalPrice() {
+				let price = 0;
+				this.selectFoods.forEach((food) => {
+					price = price + food.count * food.price;
+				})
+				return price
+			},
+			totalDescription() {
+				let des = 20 - this.totalPrice;
+				if (this.totalPrice === 0) {
+					return "¥20元起送"
+				} else if (0 < this.totalPrice && this.totalPrice < 20) {
+					return `还差${des}元起送`
+				} else {
 
-			display: flex;
-			.shopcart-left{font-size: 0;
-				/* " */
-				flex: 1;			height: 88px;
-				display: table;
-				/* display: inline-flex; */
-				 /* align-items: center; */
-				/* align-content:; */
-				.shopcart-wrapper{
-					display: inline-block;
-vertical-align: middle;
-					position: relative;
-					top: -28px;
-					width:110px;
-					/* height:110px;		 */
-					background: #141d27;
-					border-radius: 50%;
-					padding-top: 12px ;
-					/* : 12px auto; */
-					
-					margin-left: 24px;
-					margin-bottom: 4px;
-					margin-right: 24px;
-					
-					.shopcart-logo{
-						padding: ;
-						.icon-shopping_cart{
-							
-							text-align: center;
-							padding: 17px 0 0 0;
-						/* line-height: 4rem; */
-						
-							font-size: 4rem;
-							color: rgba(255,255,255,0.4);
-						}
-						
-					width: 88px;
-					height: 88px;
-					/*  0 0 12px*/
-					background: #2b343c;
-					border-radius: 50%;
-
-					/* margin-bottom: 16px; */
-					/* margin: 12px 0 0 12px; */
-					margin: auto;
+					return "去结算"
 				}
-				}
-				.shopcart-price{
-					display: inline-block;
-
-						/* vertical-align: top; */
-					font-size: 2.667rem;
-					padding-bottom: 24px;			
-							/* margin-bottom: 16px; */
-					color: rgba(255,255,255,0.4);
-					font-weight: 700;
-					/* line-height: 48px; */
-				}
-				.shopcart-descrition{
-					display: inline-block;
-
-						/* vertical-align: middle; */
-						/* padding-bottom: 24px;			 */
-
-					margin-left: 24px;
-					border-left: rgba(255,255,255, 0.1);
-					 
-					font-size: 2.667rem;
-					font-weight: 200;
-
-					color: rgba(255,255,255,0.4);}
 			}
-			.shopcart-right{
-				flex: 0 0 210px;
+
+		},
+		props: {
+			foods: {
+				type: Object
+			},
+			deliveryPrice: {
+				type: Number,
+				defualt: 1
+			},
+			minPrice: {
+				type: Number
+			},
+			selectFoods: {
+				type: Array,
+				default () {
+					return [{
+						price: 10,
+						count: 10
+					}]
+				}
 			}
+		},
+		components: {
+			cartcontral: cartcontral1
 		}
 	}
+</script>
+<style scoped="scoped" lang="less">
+	@import "./shopcart.less";
 </style>

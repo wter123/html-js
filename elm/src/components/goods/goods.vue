@@ -8,11 +8,10 @@
 					<span class="menu-text"><span v-show="iconSet[good.type]" class="menu-icon" :class="iconSet[good.type]"> </span>{{good.name}}</span>
 				</li>
 			</ul>
-		
+
 		</div>
 
 		<div class="wrapper-particulars" ref="wrapperParticulars">
-
 			<div class="particulars-content">
 
 
@@ -24,14 +23,16 @@
 								<div class="particulars-image"><img :src="food.icon" alt=""></div>
 								<div class="particulars-text">
 									<div class="particulars-name">{{food.name }}</div>
-									<div class="particulars-description">{{food.description}}</div>
+									<div class="particulars-description" v-show="food.description  ">{{food.description}}</div>
 									<div class="sell-comment">
 										<span>月售{{food.sellCount}}份</span><span>好评率{{food.rating}}%</span>
 
 									</div>
 
 									<div class="particulars-price">
-										<span class="newPrice">¥{{food.price}}</span> <!-- 
+										<span class="newPrice">¥{{food.price}}</span>
+										<!-- 
+										
 										 --><span class="oldPrice" v-show="food.oldPrice">¥{{food.oldPrice}}</span>
 									</div>
 									<div class="cartcontral-wrapper">
@@ -43,20 +44,19 @@
 						</ul>
 					</li>
 				</ul>
-			
+
 			</div>
 		</div>
-		<shopcart :deliveryPrice="goodsData.seller.deliveryPrice" :minPrice="goodsData.seller.minPrice" :select-foods="foodTotal">
-			
-		</shopcart>
- <food :food='selectedFood' ref="food"/> <!--Showvv-ref:food-->
+
+		<shopcart :deliveryPrice="goodsData.seller.deliveryPrice" :minPrice="goodsData.seller.minPrice" :select-foods="foodTotal"></shopcart>
+		<food :food='selectedFood' ref="food" />
 	</div>
 
 </template>
 
 <script>
 	import BScroll from "better-scroll";
-	import shopcart from "../shopcart/l.vue";
+	import shopcart from "../shopcart/shopcart.vue";
 	import cartcontral from "../cartcontral/cartcntralo.vue";
 	import food from '../food/food.vue'
 	export default {
@@ -64,28 +64,28 @@
 			shopcart: shopcart,
 			cartcontral,
 			food
-			
+
 		},
 		data() {
-			return {selectedFood:{},
+			return {
+				selectedFood: {},
 				goodsData: {
-					seller:{
-						deliveryPrice:1
+					seller: {
+						deliveryPrice: 1
 					},
-					goods:
-						[
-							{foods:[]}
-						],
-						
-					
+					goods: [{
+						foods: []
+					}],
 				},
 				"iconSet": ["decrease", "special", '', "discount", "guarantee", "invoice"],
 				positioning: [],
-				
+				scrollY: 0,
+
+
 			}
 		},
 		props: {
-			
+
 		},
 		created() {
 			this.$http.get("../../static/data.json").then((response) => {
@@ -96,68 +96,55 @@
 					this._positioning()
 				})
 			})
-		}, 
+		},
+
 		computed: {
+			foodTotal() {
+				let price = []
+				this.goodsData.goods.forEach((foods) => {
+
+					foods.foods.forEach((food) => {
+						if (food.count) {
+							price.push(food)
+						}
+					})
+				})
+				return price
+
+			},
 			currentScroll() {
+
 				for (let l = 0; l < this.positioning.length; l++) {
 					let height1 = this.positioning[l];
-					
 
 					let height2 = this.positioning[l + 1];
-					
 
-					if (!height2 || (height1 <= this.ScrollY && this.ScrollY < height2)) {
+
+
+					if (!height2 || (height1 <= this.scrollY && this.scrollY < height2)) {
 
 						return l
 
 					}
 
 
-/*
-{{index}}
-*/
-
-
 				}
 				return 0
 			},
-			foodTotal() {
-				let total=[]
-				let price=[]
-			
-				let object=[]
-				this.goodsData.goods.forEach((foods) => {
-
-					foods.foods.forEach((food) => {
-						
-
-						if(food.count){
-						
-						price.push(food )}
-
- 					
-					})
-				 })
-				 
-		
-			
-			return price
-			}
-		}, 
+		},
 		methods: {
-			selectFood(food,event){
+			selectFood(food, event) {
 				if (!event._constructed) {
 					return 0
-				} 
-				this.selectedFood=food
-				 this.$refs.food.foodShow()//
-			}
-			,
-			
+				}
+				this.selectedFood = food
+				this.$refs.food.foodShow()
+			},
+
 			menuClick(index, event) {
 				if (!event._constructed) {
 					return 0
-				} 
+				}
 				this.getParticularsPosition = this.$refs.wrapperParticulars.getElementsByClassName("particulars-hook");
 				let item = this.getParticularsPosition[index]
 
@@ -174,12 +161,13 @@
 						probeType: 3
 					}),
 					this.particularsScroll.on("scroll", (pos) => {
-						this.ScrollY = Math.abs(Math.round(pos.y));
+						this.scrollY = Math.abs(Math.round(pos.y));
 
 					});
 
 			},
 			_positioning() {
+
 				let height = 0;
 				let i;
 				let solide = this.$refs.wrapperParticulars.getElementsByClassName("particulars-hook");
@@ -198,4 +186,6 @@
 </script>
 <style scoped="scoped" lang="less">
 	@import "./goods.less";
+
+	
 </style>

@@ -12,10 +12,10 @@
 		</div>
 
 		<div class="wrapper-particulars" ref="wrapperParticulars">
-			<div class="particulars-content">
+			<!-- <div>			</div> -->
 
 
-				<ul>
+				<ul class="particulars-content">
 					<li v-for="particulars in goodsData.goods" class="particulars-hook">
 						<h1>{{particulars.name}}</h1>
 						<ul>
@@ -23,29 +23,29 @@
 								<div class="particulars-image"><img :src="food.icon" alt=""></div>
 								<div class="particulars-text">
 									<div class="particulars-name">{{food.name }}</div>
-									<div class="particulars-description" v-show="food.description  ">{{food.description}}</div>
-									<div class="sell-comment">
-										<span>月售{{food.sellCount}}份</span><span>好评率{{food.rating}}%</span>
-
-									</div>
-
-									<div class="particulars-price">
-										<span class="newPrice">¥{{food.price}}</span>
-										<!-- 
-										
-										 --><span class="oldPrice" v-show="food.oldPrice">¥{{food.oldPrice}}</span>
-									</div>
-									<div class="cartcontral-wrapper">
-										<cartcontral :food="food" />
-									</div>
-
+																	<div class="particulars-description" v-show="food.description  ">{{food.description}}</div>
+																	<div class="sell-comment">
+																		<span>月售{{food.sellCount}}份</span><span>好评率{{food.rating}}%</span>
+								
+																	</div>
+								
+																	<div class="particulars-price">
+																		<span class="newPrice">¥{{food.price}}</span>
+																		<!-- 
+																		
+																		 --><span class="oldPrice" v-show="food.oldPrice">¥{{food.oldPrice}}</span>
+																	</div>
+																	<div class="cartcontral-wrapper">
+																		<cartcontral :food="food" />
+																	</div>
+								
 								</div>
 							</li>
 						</ul>
 					</li>
 				</ul>
 
-			</div>
+
 		</div>
 
 		<shopcart :deliveryPrice="goodsData.seller.deliveryPrice" :minPrice="goodsData.seller.minPrice" :select-foods="foodTotal"></shopcart>

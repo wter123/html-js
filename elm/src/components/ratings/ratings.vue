@@ -148,7 +148,7 @@ if(this.ratings.ratings){
 								
 								let ra=[]
 							ra=	this.ratings.ratings.filter((rating)=>{
-				//		console.log(this.RatingsType)
+				//		console.log(this.RatingsType) &&rating 
 					if(	this.RatingsType===1){
 									return rating.rateType===0 && rating.text
 								}
@@ -157,7 +157,7 @@ if(this.ratings.ratings){
 				
 								}
 								else{			
-										return rating.text &&rating 
+										return rating.text
 									
 								}})
 							return ra}
@@ -178,7 +178,7 @@ if(this.ratings.ratings){
 												}})
 											return ra
 								
-							return 		
+							return 	0	
 					}
 			}
 		}

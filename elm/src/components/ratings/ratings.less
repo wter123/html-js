@@ -44,6 +44,10 @@ width: 100%;
 			.detail-right {
 				border-left: 1px solid rgba(7, 17, 27, 0.1);
 				padding: 0 24px;
+				@media only screen and (max-width:320px){
+					padding: 0;
+					padding-left: 4px;
+				}
 				flex: 1;
 			 
 				.server {	padding-bottom:6px ;	
@@ -116,11 +120,12 @@ width: 100%;
 			.content{
 			flex: 1;			width: 100%;
 			 
-			word-break: break-word;
+			// word-break: break-word;
 			padding-left:12px ;
 			.top{
-				display: flex;
-				justify-content: space-between;.name{
+// 				display: flex;
+// 				justify-content: space-between;
+				.name{
 				
 				font-size: 10px;
 						color: rgb(7,17,27);

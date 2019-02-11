@@ -12,8 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {},
 
-    // Various192.168.43.83 Dev Server settings192.168.43.83 localhost localhost
-    host: '192.168.43.83', // can be overwritten by process.env.HOST
+    // Various192.168.43.83 192.168.43.83Dev Server settings192.168.43.83 localhost localhost
+    host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
@@ -21,7 +21,7 @@ module.exports = {
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
     
-    /**localhost
+    /**
      * Source Maps
      */
 
@@ -43,8 +43,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-
+    assetsPublicPath: './',
+											  
     /**
      * Source Maps
      */

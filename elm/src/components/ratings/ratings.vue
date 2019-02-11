@@ -9,25 +9,25 @@
 				</div>
 				<div class="detail-right">
 					<div class="right-top">
-						<span class="server">服务态度</span>
+						<div class="server">服务态度</div>
 						<div class="server-star">
 							<star :size="36" :score="ratings.seller.serviceScore" />
-							</div><span class="star-score">{{ratings.seller.serviceScore}}
-						</span>
+							</div><div class="star-score">{{ratings.seller.serviceScore}}
+						</div>
 					</div>
 					
 					<div class="right-middle">
-						<span class="server">服务态度</span>
+						<div class="server">服务态度</div>
 						<div class="server--star">
 							<star :size="36" :score="ratings.seller.foodScore" />
 						</div>
-						<span class="star-score">{{ratings.seller.foodScore}}</span>
+						<div class="star-score">{{ratings.seller.foodScore}}</div>
 					</div>
 
 					<div class=""></div>
 					<div class="right-bottom">
-						<span class="server">送达时间</span>
-						<span class="time">{{initTime()}}分钟</span>
+						<div class="server">送达时间</div>
+						<div class="time">{{initTime()}}分钟</div>
 					</div>
 
 				</div>
@@ -42,13 +42,13 @@
 						<span class="time">{{ratings.rateTime | formatDate}}</span></div>
 						<div class="top-two"><span class="star"><star :size="36" :score='ratings.score'></star></span><span v-show="ratings.deliveryTime" class="time-description">{{ratings.deliveryTime}}分钟送达</span></div>
 	
-						<div class="content-text">{{ratings.text}}</div>
-						<div class="extra"><span class="icon"></span><span class="food-name"><template v-for="recommend in ratings.recommend"><span class="extra-name">{{ recommend}}</span></template></span></div></div></li>
+						<div class="content-text" v-if="ratings.text">{{ratings.text}}</div>
+						<div class="extra" v-if="ratings.recommend[0]"><span class="icon"></span><span class="food-name"><template v-for="recommend in ratings.recommend"><span class="extra-name">{{ recommend}}</span></template></span></div></div></li>
 				</div>
 
 </div>
 			</div>
-			
+			<!-- .lenght -->
 
 </div>
 			

@@ -5,9 +5,9 @@ import commod from "../components/content/commod"
 import comment from "../components/content/comment"
 import merchant from "../components/content/merchant"
 Vue.use(Router)
-
+//    history 
 export default new Router({
-	mode: 'history',
+	mode: 'hash',
   routes: [
     {
       path: '/comment',
@@ -24,7 +24,7 @@ export default new Router({
 			name:"merchant",
 			component:merchant
 		},
-		{path:"*",redirect:"/commod"}
+		// {path:"*",redirect:"/commod"}
   ]
 
 }

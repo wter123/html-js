@@ -2,8 +2,6 @@
 	<div class="commod">
 		<Hgoods/> </div>
 </template>
-
-
 <script>
 	import Hgoods from '../../components/goods/goods'
 	export default{

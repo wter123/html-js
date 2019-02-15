@@ -1,6 +1,5 @@
 <template>
 	<transition name='move'>
-		<!--  -->
 		<div class="food" v-show="detailShow" ref="foodScroll">
 			<div class="food-content">
 				<div class="close icon-close" v-on:click="close"></div>
@@ -37,7 +36,7 @@
 								<li>
 									<div class="rating-top">
 										<div class="ratings-time">{{rating.rateTime | formatDate}}</div>
-	<!-- rating.rateTime -->									<div class="ratings-username">{{rating.username}}</div>
+										<div class="ratings-username">{{rating.username}}</div>
 										<div class="ratings-avatar"> <img :src="rating.avatar" alt=""></div>
 									</div>
 									<div class="ratings-bottom">
@@ -54,17 +53,16 @@
 		</div>
 	</transition>
 </template>
-
-
 <script>
 	import BScroll from "better-scroll"
 	import ratingsselect from "../ratingsselect/ratingsselect.vue"
 	import split from "../public/split.vue"
 	import cartcontral from "../cartcontral/cartcntralo.vue"
-	import {formatDate} from '../../common/js/formatDate.js'
+	import {
+		formatDate
+	} from '../../common/js/formatDate.js'
 	import vue from 'vue'
 	export default {
-	
 		components: {
 			ratingsselect,
 			split,
@@ -82,19 +80,18 @@
 			food: {
 				type: Object,
 			}
-		},	 
-		 filters: {
-    formatDate (time) {
-      let date = new Date(time)
-      return formatDate(date, 'yyyy-MM-dd hh:mm')
-    }
-	},
+		},
+		filters: {
+			formatDate(time) {
+				let date = new Date(time)
+				return formatDate(date, 'yyyy-MM-dd hh:mm')
+			}
+		},
 		methods: {
 			cartcontralShowF() {
 				if (!this.food.count) {
 					vue.set(this.food, "count", 1)
 				}
-
 			},
 			ratingsshow() {
 				if (this.food.ratings) {
@@ -109,19 +106,16 @@
 									return rating.text && rating.rateType === 1
 								}
 							})
-
 						return text
 					} else {
 						let text = this.food.ratings.filter((rating) => {
 							if (this.ratingType === 0) {
 								return rating
-
 							} else if (this.ratingType === 1) {
 								return rating.rateType === 0
 							} else if (this.ratingType === 2) {
 								return rating.rateType === 1
 							}
-
 						})
 						return text
 					}
@@ -154,5 +148,4 @@
 <style lang="less" scoped="scoped">
 	@import "./food.less";
 	@import "../../assets/main/main.less";
-
 </style>

@@ -4,7 +4,6 @@
 <script>
 	import seller from '../seller/seller.vue' 
 export default {
-
 		components: {
 		 seller
 		},}

@@ -31,10 +31,12 @@
 										{{food.name}}</div>
 									<div class="newprice-list">
 										¥{{food.price*food.count}}
-									</div>
-									<div class="cart-wrapper">
+									</div><div class="cart-wrapper">
+										
 										<cartcontral :food="food"></cartcontral>
 									</div>
+									<!-- <div class="ll"></div> -->
+									
 								</li>
 							</ul>
 						</div>

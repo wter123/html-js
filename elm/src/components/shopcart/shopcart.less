@@ -46,8 +46,6 @@
 						}
 	//					vertical-align: middle;.shopcart-logo的宽高会影响父级兄弟元素.shopcart-price .shopcart-descrition的高，使其无效12
 					.shopcart-logo {
-						// position: absolute;
-						// left: 6px;
 						display: table;
 						width: 100%;
 						height:44px ;
@@ -62,11 +60,6 @@
 						.icon-shopping_cart {				
 							display: table-cell;
 							vertical-align: middle;
-							// position: absolute;
-							// padding: 8px;10px10px0
-							// line-height: 44px;
-// 							top:  25%;
-// 							left: 25%;
 							text-align: center;
 							
 							font-size: 24px;
@@ -87,6 +80,9 @@
 				.shopcart-price {
 					display: inline-block;
 					font-size: 14px;
+					@media only screen and (max-width:320px){
+						padding:0 3px 0 0;
+					}
 					padding: 0 12px 0 0 ;
 					color: rgba(255, 255, 255 ,0.4);
 					
@@ -96,6 +92,9 @@
 					font-weight: 700;
 				}
 				.shopcart-descrition {
+					@media only screen and(max-width:320px){
+						padding-left:3px;
+					}
 					display: inline-block;
 					padding-left: 12px;
 					
@@ -181,6 +180,7 @@
 					
 					ul{
 						li{
+							width: 100%;
 							position: relative;
 							height: 48px;
 							box-sizing: border-box;
@@ -191,34 +191,32 @@
 								.list-name{	
 							
 									display: inline-block;
-	
-								vertical-align: middle;
-								font-size: 14px;
-								color: rgb(7,17,27);
-								line-height: 14px;
+									position: absolute;bottom:17px ;
+
+
+									font-size: 14px;
+									color: rgb(7,17,27);
+									line-height: 14px;
 							}
-					
-							
-						 .newprice-list{						
-							 position: absolute;
-							 right: 107px;
-							 bottom: 14px;
-							 vertical-align: middle;
-							 float: right;
-							 display: inline-block;	
+							.newprice-list{	
+							position: absolute;
+							bottom: 15.6px;	
+						right: 117px;
+							display: inline-block;	
 								 font-size: 12px;
 								 font-weight: 700;
 								 color: rgb(240,20,20);
 									
 							}
-							.cart-wrapper{				
-							position: absolute;
-							right: 15px;
-							bottom: 3px;
-								display: inline-block;	
-									
-	
+								.cart-wrapper{	
+								display: inline-block;			
+								position: absolute;
+								right: 15px;
+								bottom: 6px;
 							}
+					
+				
+						
 						}
 					}
 				}

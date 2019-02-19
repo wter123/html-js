@@ -2,27 +2,28 @@
 	<div class="ratingsselect">
 		<div class="food-ratings-title">商品评价</div>
 		<div class="food-ratings-icon">
-			<span @click="clickSelectType(0)" class="all" :class="{ 'active' :selectType===0}">{{rating.all}}{{lengthi}}</span><!-- food.ratings.lengthfood.ratings. -->
-			<span @click="clickSelectType(1)" class="recommend" :class="{active:selectType===1}">{{ rating.recommend}}{{ratingsRecommend()}}</span>
-			<span @click="clickSelectType(2)" class="putter" :class="{active:selectType===2}">{{rating.putter}}{{ratingPutter()}}</span></div>
+			<span @click="clickSelectType(0)" class="all" :class="{ 'active'  :state.select===0}">{{rating.all}}{{lengthi}}</span><!-- food.ratings.lengthfood.ratings. -->
+			<span @click="clickSelectType(1)" class="recommend" :class="{active :state.select===1}">{{ rating.recommend}}{{ratingsRecommend()}}</span>
+			<span @click="clickSelectType(2)" class="putter" :class="{active :state.select===2}">{{rating.putter}}{{ratingPutter()}}</span></div>
 		<div class="ratingsselect-description">
-			<span class="icon-check_circle" @click="circleHeightlight" :class="{'ccircleHeigh':circleHeigh}"></span><span class="ratingsselect-text">只看有内容的评价</span>
+			<span class="icon-check_circle" @click="circleHeightlight" :class="{'ccircleHeigh':state.circle}"></span><span class="ratingsselect-text">只看有内容的评价</span>
 		</div>
 	</div>
 </template>
+
 <script>
 	export default {
 		data() {
 			return {
-				selectType: 1,
-				circleHeigh: false,
+// 				selectType: 1,
+// 				circleHeigh: false,
 				length:0
 			}
 		},
 		props: {
 			food: {
 				type: Object,
-			 
+//TypeTypeType			 
 			},
 			rating: {
 				type: Object,
@@ -34,13 +35,18 @@
 					}
 				}
 			}
-
+,state:{
+	type:Object,
+//	default
+// 	default () {
+// 					return {select:0,circle:false}}
+}
 		},
 computed:{
 		lengthi(){
 				if(this.food.ratings ){
 					
-				return	 this.food.ratings.length	 ////length=
+				return	 this.food.ratings.length	
 				
 				}
 				return 0
@@ -52,14 +58,15 @@ computed:{
 		
 
 			circleHeightlight() {
-				this.circleHeigh = !this.circleHeigh
-				this.$emit("foodShowb", this.circleHeigh)
+				
+				this.state.circle = !this.state.circle
+				this.$emit("foodShowb", this.state.circle)
 
 
 			},
 			clickSelectType(number) {
 				this.$emit("ratingTypeSeed", number)
-				this.selectType = number
+				this.state.select = number
 			},
 			cratings() {
 			},
@@ -116,8 +123,6 @@ computed:{
 				background: rgba(7, 85, 93, 0.2);
 				margin-left: 8px;
 			}
-
-			// span:nth-child(3) {}
 			.active {
 				color: rgb(255, 255, 255);
 				background: rgb(0, 160, 220);

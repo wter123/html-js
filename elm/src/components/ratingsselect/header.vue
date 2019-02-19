@@ -156,3 +156,18 @@
 	// @import  'C:/Users/Administrator/Desktop/git/src/assets/main.less'	;
 
 </style>
+,
+		mounted() {
+			if (this.food.image) {
+
+				document.querySelector(".food-img img").src = this.food.image
+			}
+		}
+		
+		default () {
+			return {
+				image: "./de4b0fc4cee046483b883070c71d14de.gif"
+			}
+		}
+		
+		,

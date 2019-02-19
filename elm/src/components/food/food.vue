@@ -27,8 +27,8 @@
 						<div class="info">{{food.info}}</div>
 					</div>
 					<split />
-					<div class="food-ratings">
-						<ratingsselect :food="food" @foodShowb="acceptR" @ratingTypeSeed="ratingTypeAccept" />
+					<div class="food-ratings" 
+						<ratingsselect :food="food" @foodShowb="acceptR" @ratingTypeSeed="ratingTypeAccept"  :state='s'/>
 					</div>
 					<div class="ratings">
 						<div class="ratings-content" v-show="food.ratings && food.ratings.length">
@@ -46,7 +46,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="rating-blank" v-show="!food.ratings ||  !food.ratings.length">暂无评论</div>
+						<div class="rating-blank" v-show="!food.ratings ||  !food.ratings.length ||!ratingsshow().length">暂无评论</div>
 					</div>
 				</div>
 			</div>
@@ -58,9 +58,7 @@
 	import ratingsselect from "../ratingsselect/ratingsselect.vue"
 	import split from "../public/split.vue"
 	import cartcontral from "../cartcontral/cartcntralo.vue"
-	import {
-		formatDate
-	} from '../../common/js/formatDate.js'
+	import {formatDate} from '../../common/js/formatDate.js'
 	import vue from 'vue'
 	export default {
 		components: {
@@ -70,6 +68,7 @@
 		},
 		data() {
 			return {
+				s:{select:0,circle:false},
 				cartcontralShow: false,
 				detailShow: false,
 				rating: false,
@@ -78,9 +77,11 @@
 		},
 		props: {
 			food: {
-				type: Object,
+				type: Object
 			}
 		},
+		
+//时间模块
 		filters: {
 			formatDate(time) {
 				let date = new Date(time)
@@ -88,11 +89,15 @@
 			}
 		},
 		methods: {
+			
+//小球展示
 			cartcontralShowF() {
 				if (!this.food.count) {
 					vue.set(this.food, "count", 1)
 				}
 			},
+			
+//评论展示
 			ratingsshow() {
 				if (this.food.ratings) {
 					if (this.rating === true) {
@@ -121,13 +126,19 @@
 					}
 				}
 			},
+			
+			
+//接受来自ratingsselect模块的参数
 			acceptR(e) {
 				this.rating = e
 			},
 			ratingTypeAccept(e) {
 				this.ratingType = e
-				console.log(this.ratingType)
+
 			},
+			
+						
+//关闭及展示food商品详情页
 			close() {
 				this.detailShow = false
 			},
@@ -139,12 +150,15 @@
 					})
 				})
 			}
-		},
-	}
+			
+			
+		}
+	,
+	computed:{
+		
+		}
+	}//////
 </script>
-
-
-
 <style lang="less" scoped="scoped">
 	@import "./food.less";
 	@import "../../assets/main/main.less";

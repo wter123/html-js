@@ -14,8 +14,6 @@
 			<div class="shopcart-right" @click="listShow">
 				<div class="shopcart-buy" :class="{'HeightLight': totalPrice>=20 }">{{totalDescription}}</div>
 			</div>
-
-			<!-- <div> -->
 				<div class="shopcart-list" v-show="listContainerQuiet">
 					<div class="list-header">
 						<span class="list-shopcart">购物车</span>
@@ -35,8 +33,7 @@
 										
 										<cartcontral :food="food"></cartcontral>
 									</div>
-									<!-- <div class="ll"></div> -->
-									
+					
 								</li>
 							</ul>
 						</div>
@@ -53,7 +50,6 @@
 	export default {
 		created() {
 			this.$nextTick(function() {
-				// this._initScroll();
 				this.listScroll = new BScroll(this.$refs.shopcartList, {
 					click: true,
 					probeType: 3
@@ -106,22 +102,12 @@
 					!this.listContainerQuiet
 	
 				this.$nextTick(function() {
-					// 							if(!this.listScroll){
-					// 								// this.listScroll = new BScroll(this.$refs.shopcartList, {click:true}),
 					this.listScroll = new BScroll(this.$refs.shopcartList, {
 						click: true,
 						probeType: 3
 					})
-					// }
-					// 									if(show) {
-					// 										 console.log(show,7)
-					// 									}
-					// 									else{
-					// 								//		this.listScroll.refresh();
-					// 									}
-					//Slll
+	
 				})
-				// 							}
 				return show
 			},
 			totalCount() {

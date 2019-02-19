@@ -60,8 +60,6 @@
 
 				</div>
 			</div>
-			<!-- .lenght -->
-
 		</div>
 
 	</div>
@@ -93,10 +91,6 @@
 			star,
 
 		},
-
-		// 	computed:{
-		// 		}	,
-
 		filters: {
 			formatDate(time) {
 				let date = new Date(time)
@@ -204,10 +198,6 @@
 				});
 
 			})
-
-			// 			setTimeout(()=>{
-			//            this.scroll = new BScroll(this.$refs.ratingsScroll,{                       click: true});
-			//         },20)
 		}
 
 	}

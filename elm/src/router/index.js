@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import commod from "../components/content/commod"
 import comment from "../components/content/comment"
 import merchant from "../components/content/merchant"
+import good from '../components/goods/goods.vue'
 Vue.use(Router)
 //    history 
 export default new Router({
@@ -17,7 +18,7 @@ export default new Router({
 		{
 				path: "/",
 				name: 'commod',
-				component:commod
+				component:good
 			},
 		{
 			path:"/merchant",

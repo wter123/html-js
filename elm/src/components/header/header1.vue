@@ -71,7 +71,7 @@
 				type: Object,
 				default () {
 					return {
-						name: 's',
+						name: '',
 						supports: [{
 							description: this.sellerData
 						}]
@@ -82,10 +82,9 @@
 		},
 		data() {
 			return {
-				// rData: {
-				// supports,
+
 				detailShow: false
-			} //} ,
+			}
 		},
 		methods: {
 			showDetail: function() {
@@ -105,6 +104,4 @@
 	@import "../../assets/main/main.less";
 	@import "../../assets/icon-font/style.css";
 	@import "./header.less";
-
-
 </style>
